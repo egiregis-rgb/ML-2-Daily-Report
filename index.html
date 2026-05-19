@@ -665,18 +665,15 @@ Submit
 
 <script>
 
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbwLTEF2pWylAg6ZRkvK-OEx2jzqZxPUZFF0glJATEsQU31vOaoRQmIE-5pfvlnO9ubYPw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwLTEF2pWylAg6ZRkvK-OEx2jzqZxPUZFF0glJATEsQU31vOaoRQmIE-5pfvlnO9ubYPw/exec";
 
 async function submitData() {
 
   const data = {
 
-    reportNum:
-      document.getElementById("reportNum").value,
+    reportNum: document.getElementById("reportNum").value,
 
-    company:
-      document.getElementById("company").value
+    company: document.getElementById("company").value
 
   };
 
@@ -688,25 +685,22 @@ async function submitData() {
 
   })
 
-  .then(res => res.json())
+  .then(response => response.json())
 
-  .then(res => {
+  .then(result => {
 
     alert("Data berhasil dikirim");
 
-    console.log(res);
+    console.log(result);
 
   })
 
-  .catch(err => {
+  .catch(error => {
 
-    console.error(err);
+    console.error(error);
 
   });
 
 }
 
 </script>
-
-</body>
-</html>
