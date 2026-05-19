@@ -652,9 +652,6 @@ function submitForm(e) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
 }
-</script>
-<script>
-
 <input type="text" id="reportNum" placeholder="No Report">
 
 <input type="text" id="company" placeholder="Company">
@@ -690,8 +687,6 @@ async function submitData() {
   .then(result => {
 
     alert("Data berhasil dikirim");
-
-    console.log(result);
 
   })
 
