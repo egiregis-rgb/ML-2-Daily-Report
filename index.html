@@ -655,6 +655,16 @@ function submitForm(e) {
 </script>
 <script>
 
+<input type="text" id="reportNum" placeholder="No Report">
+
+<input type="text" id="company" placeholder="Company">
+
+<button onclick="submitData()">
+Submit
+</button>
+
+<script>
+
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbwLTEF2pWylAg6ZRkvK-OEx2jzqZxPUZFF0glJATEsQU31vOaoRQmIE-5pfvlnO9ubYPw/exec";
 
@@ -662,8 +672,11 @@ async function submitData() {
 
   const data = {
 
-    reportNum: document.getElementById("reportNum").value,
-    company: document.getElementById("company").value
+    reportNum:
+      document.getElementById("reportNum").value,
+
+    company:
+      document.getElementById("company").value
 
   };
 
@@ -694,55 +707,6 @@ async function submitData() {
 }
 
 </script>
-<input type="text" id="reportNum" placeholder="No Report">
 
-<input type="text" id="company" placeholder="Company">
-
-<button onclick="submitData()">
-Submit
-</button>
-
-<script>
-
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbwLTEF2pWylAg6ZRkvK-OEx2jzqZxPUZFF0glJATEsQU31vOaoRQmIE-5pfvlnO9ubYPw/exec";
-
-async function submitData() {
-
-  const data = {
-
-    reportNum:
-    document.getElementById("reportNum").value,
-
-    company:
-    document.getElementById("company").value
-
-  };
-
-  fetch(scriptURL, {
-
-    method: "POST",
-
-    body: JSON.stringify(data)
-
-  })
-
-  .then(res => res.json())
-
-  .then(res => {
-
-    alert("Data berhasil dikirim");
-
-  })
-
-  .catch(err => {
-
-    console.error(err);
-
-  });
-
-}
-
-</script>
 </body>
 </html>
